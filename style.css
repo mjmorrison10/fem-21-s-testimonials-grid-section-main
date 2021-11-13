@@ -343,10 +343,11 @@ footer {
   }
 
   .container {
+    max-width: 600px;
     margin-top: 4rem;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto auto auto;
     gap: 1rem 0px;
     grid-template-areas:
       "daniel-clifford"
@@ -354,6 +355,12 @@ footer {
       "jeanette-harmon"
       "patrick-abrams"
       "kira-whittle";
+  }
+  .quote {
+    max-width: 60ch;
+  }
+  .information {
+    max-width: 65ch;
   }
 
   footer {
