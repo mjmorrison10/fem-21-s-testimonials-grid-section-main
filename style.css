@@ -88,16 +88,18 @@
 /* /////////////////////////////////////////////////////////////////////////// */
 
 body {
+  max-width: 1440px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
   background-color: var(--color-light-grayish-blue);
 }
 
 .container {
-  width: 85%;
-  height: 75%;
+  width: 75%;
+  height: 65%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
@@ -111,7 +113,7 @@ body {
   background-color: var(--color-white);
   color: var(--color-white);
   font-weight: var(--fontWeight-normal);
-  padding: 1rem;
+  padding: 2rem;
   border-radius: 5px;
   -webkit-box-shadow: 0px 50px 50px -20px rgba(0, 0, 0, 0.1);
   box-shadow: 0px 50px 50px -20px rgba(0, 0, 0, 0.1);
@@ -120,7 +122,7 @@ body {
   /* grid-template-rows: 1fr 1fr 1fr; */
   grid-template-columns: auto auto auto;
   grid-template-rows: auto auto auto;
-  gap: 0px 0px;
+  gap: 1rem 0px;
   grid-template-areas:
     "name-card name-card name-card"
     "quote quote quote"
@@ -129,7 +131,7 @@ body {
 
 .quote {
   grid-area: quote;
-  font-size: var(--fontSize-x225-large);
+  font-size: var(--fontSize-x5-large);
   font-weight: var(--fontWeight-bold);
 }
 
@@ -301,7 +303,7 @@ body {
 .name {
   grid-area: name;
   align-self: flex-end;
-  font-size: var(--fontSize-x5-large);
+  font-size: var(--fontSize-x2-large);
 }
 
 .title {
@@ -317,4 +319,44 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
+}
+
+/* /////////////////////////////////////////////////////////////////////////// */
+/* Media Queries ///////////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////////////////////////// */
+
+@media (max-width: 1250px) {
+  .container {
+    width: 90%;
+  }
+}
+
+@media (max-width: 1100px) {
+  .container {
+    width: 95%;
+  }
+}
+
+@media (max-width: 1000px) {
+  body {
+    flex-direction: column;
+  }
+
+  .container {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 1rem 0px;
+    grid-template-areas:
+      "daniel-clifford"
+      "jonathan-walters"
+      "jeanette-harmon"
+      "patrick-abrams"
+      "kira-whittle";
+  }
+
+  footer {
+    position: inherit;
+  }
 }
