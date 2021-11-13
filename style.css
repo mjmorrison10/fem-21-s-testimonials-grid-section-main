@@ -70,31 +70,151 @@
   font-size: 11px;
   text-align: center;
 }
+
 .attribution a {
   color: hsl(228, 45%, 44%);
 }
 
+/* /////////////////////////////////////////////////////////////////////////// */
+/* Grid/////////////////////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////////////////////////// */
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: var(--color-light-grayish-blue);
+}
+
 .container {
+  width: 85%;
+  height: 75%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  gap: 0px 0px;
+  gap: 1rem 1rem;
   grid-template-areas:
     "daniel-clifford daniel-clifford jonathan-walters kira-whittle"
     "jeanette-harmon patrick-abrams patrick-abrams kira-whittle";
 }
+
+.daniel-clifford { grid-area: daniel-clifford; }
+.jonathan-walters { grid-area: jonathan-walters; }
+.jeanette-harmon { grid-area: jeanette-harmon; }
+.patrick-abrams { grid-area: patrick-abrams; }
+.kira-whittle { grid-area: kira-whittle; }
+
+.section {
+  background-color: var(--color-white);
+  /* color: var(--color-white); */
+  padding: 1rem;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 50px 50px -20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 50px 50px -20px rgba(0, 0, 0, 0.1);
+
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr; 
+  grid-template-rows: 1fr 1fr 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "name-card name-card name-card"
+    "quote quote quote"
+    "information information information"; 
+}
+
+.name-card {
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "img name"
+      "img title"; 
+    grid-area: name-card; 
+  }
+  .img { grid-area: img; }
+  .name { grid-area: name; }
+  .title { grid-area: title; }
+  .quote { grid-area: quote; }
+  .information { grid-area: information; }
+
+/* .name-card {
+  width: fit-content;
+
+  display: grid;
+  grid-template-columns: 0.5fr 1.5fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "img name"
+    "img title"
+    "quote quote"
+    "information information";
+}
+
+.name {
+  grid-area: name;
+}
+
+.title {
+  grid-area: title;
+}
+
+.img {
+  grid-area: img;
+  border-radius: 50%;
+  height: auto;
+  width: auto;
+  overflow: hidden;
+  border: 2px solid white;
+}
+.img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .daniel-clifford {
   grid-area: daniel-clifford;
+  background-color: var(--color-moderate-violet);
 }
+
 .jonathan-walters {
   grid-area: jonathan-walters;
+  background-color: var(--color-very-dark-grayish-blue);
 }
+
 .jeanette-harmon {
   grid-area: jeanette-harmon;
+  background-color: var(--color-white);
+  color: var(--color-very-dark-grayish-blue);
 }
+
 .patrick-abrams {
   grid-area: patrick-abrams;
+  background-color: var(--color-very-dark-blackish-blue);
 }
+
 .kira-whittle {
   grid-area: kira-whittle;
+  color: var(--color-very-dark-grayish-blue);
+}
+
+
+.quote {
+  grid-area: quote;
+}
+.information {
+  grid-area: information;
+} */
+
+/* /////////////////////////////////////////////////////////////////////////// */
+/* Footer///////////////////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////////////////////////// */
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
