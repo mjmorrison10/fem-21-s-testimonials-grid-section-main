@@ -7,14 +7,14 @@
   --moderate-violet-lightness: 52%;
 
   --color-very-dark-grayish-blue: hsl(217, 19%, 35%);
-  --dark-grayish-blue-hue: 217;
-  --dark-grayish-blue-saturation: 19%;
-  --dark-grayish-blue-lightness: 35%;
+  --very-dark-grayish-blue-hue: 217;
+  --very-dark-grayish-blue-saturation: 19%;
+  --very-dark-grayish-blue-lightness: 35%;
 
   --color-very-dark-blackish-blue: hsl(219, 29%, 14%);
-  --dark-blackish-blue-hue: 219;
-  --dark-blackish-blue-saturation: 29%;
-  --dark-blackish-blue-lightness: 14%;
+  --very-dark-blackish-blue-hue: 219;
+  --very-dark-blackish-blue-saturation: 29%;
+  --very-dark-blackish-blue-lightness: 14%;
 
   --color-white: hsl(0, 0%, 100%);
   --white-hue: 0;
@@ -53,6 +53,14 @@
   --fontSize-x8-large: calc(var(--fontSize) * 1.8);
   --fontSize-x9-large: calc(var(--fontSize) * 1.9);
   --fontSize-x20-large: calc(var(--fontSize) * 2);
+  --fontSize-x225-large: calc(var(--fontSize) * 2.25);
+  --fontSize-x25-large: calc(var(--fontSize) * 2.5);
+  --fontSize-x275-large: calc(var(--fontSize) * 2.75);
+  --fontSize-x30-large: calc(var(--fontSize) * 3);
+  --fontSize-x325-large: calc(var(--fontSize) * 3.25);
+  --fontSize-x35-large: calc(var(--fontSize) * 3.5);
+  --fontSize-x375-large: calc(var(--fontSize) * 3.75);
+  --fontSize-x4-large: calc(var(--fontSize) * 4);
 
   --fontWeight-normal: 500;
   --fontWeight-bold: 600;
@@ -99,101 +107,143 @@ body {
     "jeanette-harmon patrick-abrams patrick-abrams kira-whittle";
 }
 
-.daniel-clifford { grid-area: daniel-clifford; }
-.jonathan-walters { grid-area: jonathan-walters; }
-.jeanette-harmon { grid-area: jeanette-harmon; }
-.patrick-abrams { grid-area: patrick-abrams; }
-.kira-whittle { grid-area: kira-whittle; }
-
 .section {
   background-color: var(--color-white);
-  /* color: var(--color-white); */
+  color: var(--color-white);
+  font-weight: var(--fontWeight-normal);
   padding: 1rem;
   border-radius: 5px;
   -webkit-box-shadow: 0px 50px 50px -20px rgba(0, 0, 0, 0.1);
   box-shadow: 0px 50px 50px -20px rgba(0, 0, 0, 0.1);
-
-  display: grid; 
-  grid-template-columns: 1fr 1fr 1fr; 
-  grid-template-rows: 1fr 1fr 1fr; 
-  gap: 0px 0px; 
-  grid-template-areas: 
-    "name-card name-card name-card"
-    "quote quote quote"
-    "information information information"; 
-}
-
-.name-card {
-    display: grid; 
-    grid-template-columns: 1fr 1fr; 
-    grid-template-rows: 1fr 1fr; 
-    gap: 0px 0px; 
-    grid-template-areas: 
-      "img name"
-      "img title"; 
-    grid-area: name-card; 
-  }
-  .img { grid-area: img; }
-  .name { grid-area: name; }
-  .title { grid-area: title; }
-  .quote { grid-area: quote; }
-  .information { grid-area: information; }
-
-/* .name-card {
-  width: fit-content;
-
   display: grid;
-  grid-template-columns: 0.5fr 1.5fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  /* grid-template-columns: 1fr 1fr 1fr; */
+  /* grid-template-rows: 1fr 1fr 1fr; */
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto;
   gap: 0px 0px;
   grid-template-areas:
-    "img name"
-    "img title"
-    "quote quote"
-    "information information";
+    "name-card name-card name-card"
+    "quote quote quote"
+    "information information information";
 }
 
-.name {
-  grid-area: name;
+.quote {
+  grid-area: quote;
+  font-size: var(--fontSize-x225-large);
+  font-weight: var(--fontWeight-bold);
 }
 
-.title {
-  grid-area: title;
-}
-
-.img {
-  grid-area: img;
-  border-radius: 50%;
-  height: auto;
-  width: auto;
-  overflow: hidden;
-  border: 2px solid white;
-}
-.img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.information {
+  grid-area: information;
+  font-size: var(--fontSize-medium);
 }
 
 .daniel-clifford {
   grid-area: daniel-clifford;
   background-color: var(--color-moderate-violet);
+  color: var(--color-light-grayish-blue);
+}
+
+.daniel-clifford .title {
+  color: hsl(
+    var(--light-grayish-blue-hue),
+    var(--light-grayish-blue-saturation),
+    var(--light-grayish-blue-lightness),
+    0.5
+  );
+}
+
+.daniel-clifford .information {
+  color: hsl(
+    var(--light-grayish-blue-hue),
+    var(--light-grayish-blue-saturation),
+    var(--light-grayish-blue-lightness),
+    0.7
+  );
 }
 
 .jonathan-walters {
   grid-area: jonathan-walters;
   background-color: var(--color-very-dark-grayish-blue);
+  color: var(--color-light-grayish-blue);
+}
+
+.jonathan-walters .title {
+  color: hsl(
+    var(--light-grayish-blue-hue),
+    var(--light-grayish-blue-saturation),
+    var(--light-grayish-blue-lightness),
+    0.5
+  );
+}
+
+.jonathan-walters .information {
+  color: hsl(
+    var(--light-grayish-blue-hue),
+    var(--light-grayish-blue-saturation),
+    var(--light-grayish-blue-lightness),
+    0.7
+  );
 }
 
 .jeanette-harmon {
   grid-area: jeanette-harmon;
   background-color: var(--color-white);
   color: var(--color-very-dark-grayish-blue);
+
+  /* color: var(--color-light-gray); */
+  /* color: var(--color-light-grayish-blue); */
+  /* color: var(--color-moderate-violet); */
+  /* color: var(--color-very-dark-blackish-blue); */
+  /* color: var(--color-very-dark-grayish-blue); */
+}
+
+.jeanette-harmon .title {
+  color: hsl(
+    var(--very-dark-grayish-blue-hue),
+    var(--very-dark-grayish-blue-saturation),
+    var(--very-dark-grayish-blue-lightness),
+    0.5
+  );
+}
+
+.jeanette-harmon .information {
+  color: hsl(
+    var(--very-dark-grayish-blue-hue),
+    var(--very-dark-grayish-blue-saturation),
+    var(--very-dark-grayish-blue-lightness),
+    0.7
+  );
 }
 
 .patrick-abrams {
   grid-area: patrick-abrams;
   background-color: var(--color-very-dark-blackish-blue);
+  color: var(--color-light-gray);
+
+  /* color: var(--color-light-gray); */
+  /* color: var(--color-light-grayish-blue); */
+  /* color: var(--color-moderate-violet); */
+  /* color: var(--color-very-dark-blackish-blue); */
+  /* color: var(--color-very-dark-grayish-blue); */
+}
+
+.patrick-abrams .title {
+  color: hsl(
+    var(--light-gray-hue),
+    var(--light-gray-saturation),
+    var(--light-gray-lightness),
+    0.5
+  );
+}
+
+.patrick-abrams .information {
+  color: hsl(
+    var(--light-gray-hue),
+    var(--light-gray-saturation),
+    var(--light-gray-lightness),
+    0.7
+  );
 }
 
 .kira-whittle {
@@ -201,13 +251,63 @@ body {
   color: var(--color-very-dark-grayish-blue);
 }
 
-
-.quote {
-  grid-area: quote;
+.kira-whittle .title {
+  color: hsl(
+    var(--very-dark-grayish-blue-hue),
+    var(--very-dark-grayish-blue-saturation),
+    var(--very-dark-grayish-blue-lightness),
+    0.5
+  );
 }
-.information {
-  grid-area: information;
-} */
+
+.kira-whittle .information {
+  color: hsl(
+    var(--very-dark-grayish-blue-hue),
+    var(--very-dark-grayish-blue-saturation),
+    var(--very-dark-grayish-blue-lightness),
+    0.7
+  );
+}
+
+.name-card {
+  width: fit-content;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto auto auto;
+  gap: 0px 2rem;
+  grid-template-areas:
+    "img name"
+    "img title";
+  grid-area: name-card;
+}
+
+.img {
+  grid-area: img;
+  border-radius: 50%;
+  height: auto;
+  width: auto;
+}
+
+.img img {
+  border: 2px solid white;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.name {
+  grid-area: name;
+  align-self: flex-end;
+  font-size: var(--fontSize-x5-large);
+}
+
+.title {
+  align-self: flex-start;
+  grid-area: title;
+}
 
 /* /////////////////////////////////////////////////////////////////////////// */
 /* Footer///////////////////////////////////////////////////////////////////// */
